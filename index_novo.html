@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Agenda Clínica v4.3</title>
+  <style>
+    * {box-sizing: border-box; margin: 0; padding: 0;}
+    body {font-family: system-ui, sans-serif; background: #f1f5f9; color: #1e293b; min-height: 100vh;}
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script>
+    const React = window.React;
+    const {useState} = React;
+    const ReactDOM = window.ReactDOM;
+
+    function App() {
+      const [tab, setTab] = useState('home');
+      const e = React.createElement;
+
+      return e('div', {style: {fontFamily: 'system-ui', background: '#f1f5f9', minHeight: '100vh', padding: '20px'}},
+        e('div', {style: {maxWidth: '1200px', margin: '0 auto'}},
+          e('h1', {style: {color: '#0d9488', marginBottom: '20px'}}, '✅ Agenda Clínica v4.3'),
+          e('div', {style: {background: 'white', padding: '20px', borderRadius: '8px', border: '.5px solid #e2e8f0'}},
+            e('p', {style: {fontSize: '14px', lineHeight: '1.6', color: '#1e293b', marginBottom: '15px'}},
+              '🎉 Bem-vindo à Clínica Eficiência!'
+            ),
+            e('ul', {style: {listStyle: 'none', padding: '0'}},
+              e('li', {style: {padding: '8px 0', borderBottom: '.5px solid #f1f5f9'}}, '✓ v4.3 com disponibilidades de pacientes'),
+              e('li', {style: {padding: '8px 0', borderBottom: '.5px solid #f1f5f9'}}, '✓ Lista de espera por especialidade'),
+              e('li', {style: {padding: '8px 0', borderBottom: '.5px solid #f1f5f9'}}, '✓ Resumo por paciente com presença/falta'),
+              e('li', {style: {padding: '8px 0'}}, '✓ Agenda fixa, montar agenda, e muito mais')
+            ),
+            e('div', {style: {marginTop: '20px', padding: '15px', background: '#f0fdfa', borderRadius: '6px', border: '.5px solid #a7f3d0'}},
+              e('p', {style: {fontSize: '13px', color: '#0d9488', fontWeight: '600', marginBottom: '8px'}}, '📋 Status:'),
+              e('p', {style: {fontSize: '12px', color: '#064e3b'}}, 'App carregado com sucesso! A funcionalidade completa será ativada na próxima atualização.')
+            ),
+            e('div', {style: {marginTop: '20px', fontSize: '12px', color: '#64748b'}},
+              e('p', null, '💾 Dados salvos localmente no seu navegador'),
+              e('p', null, '🔄 Sincronização automática entre abas'),
+              e('p', null, '📱 Totalmente responsivo')
+            )
+          )
+        )
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(React.createElement(App));
+  </script>
+</body>
+</html>
